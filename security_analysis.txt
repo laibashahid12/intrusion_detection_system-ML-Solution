@@ -1,0 +1,20 @@
+
+Security Analysis:
+
+The Random Forest based intrusion detection model was trained using the UNSW-NB15 training dataset and tested on the separate UNSW-NB15 testing dataset.
+
+The target variable used in this project was 'label', where 0 represents normal network traffic and 1 represents malicious or attack traffic.
+
+The feature 'attack_cat' was removed from the input features because it directly represents the attack category and could cause data leakage. This ensures that the model learns from actual network traffic features rather than being given the answer indirectly.
+
+The model achieved an accuracy of 0.8713, which shows the overall percentage of correct predictions.
+
+The precision score was 0.8272. Precision shows how many predicted attacks were actually attacks. High precision means the model produces fewer false alarms.
+
+The recall score was 0.9687. Recall is especially important in intrusion detection because it shows how many actual attacks were correctly detected. A low recall would be dangerous because real malicious traffic could pass through the network undetected.
+
+The F1-score was 0.8923, which balances precision and recall.
+
+In cybersecurity, false negatives are more dangerous than false positives. A false negative means malicious traffic was classified as normal, which may allow an attacker to bypass detection. A false positive means normal traffic was classified as malicious, which can create additional workload for the security team but is generally less dangerous than missing a real attack.
+
+Overall, the model demonstrates that machine learning can support traditional Network Intrusion Detection Systems by automatically detecting suspicious network traffic.
